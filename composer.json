@@ -1,0 +1,22 @@
+{
+    "name": "yii2-app-devhosts/yii2-app-devhosts",
+    "description": "使用yii2封装 app devhosts 扩展",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension"],
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "gengxiankun",
+            "email": "gengxiankun@126.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0.0",
+        "yiiplus/yii2-kvstore": "^2.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "yiiplus\\appDevhosts\\": ""
+        }
+    }
+}
