@@ -1,5 +1,5 @@
 {
-    "name": "yii2-app-devhosts/yii2-app-devhosts",
+    "name": "yiiplus/yii2-app-devhosts",
     "description": "使用yii2封装 app devhosts 扩展",
     "type": "yii2-extension",
     "keywords": ["yii2","extension"],
