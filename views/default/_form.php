@@ -16,13 +16,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'host')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'type')->textInput() ?>
+    <?= $form->field($model, 'type')->radioList(yiiplus\appDevhosts\models\AppDevhosts::$type_list) ?>  
 
     <?= $form->field($model, 'sort')->textInput() ?>
-
-    <?= $form->field($model, 'created_at')->textInput() ?>
-
-    <?= $form->field($model, 'updated_at')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

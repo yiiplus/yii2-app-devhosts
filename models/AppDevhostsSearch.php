@@ -31,7 +31,9 @@ use common\models\AppDevhosts;
 class AppDevhostsSearch extends AppDevhosts
 {
     /**
-     * {@inheritdoc}
+     * Returns the validation rules for attributes.
+     *
+     * @return array validation rules
      */
     public function rules()
     {
@@ -39,15 +41,6 @@ class AppDevhostsSearch extends AppDevhosts
             [['id', 'type', 'sort'], 'integer'],
             [['name', 'host', 'created_at', 'updated_at'], 'safe'],
         ];
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function scenarios()
-    {
-        // bypass scenarios() implementation in the parent class
-        return Model::scenarios();
     }
 
     /**

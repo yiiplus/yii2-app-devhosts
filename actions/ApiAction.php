@@ -15,12 +15,12 @@ namespace yiiplus\appDevhosts\actions;
 
 use Yii;
 use yii\rest\Action;
+use yii\base\InvalidParamException;
 use yii\base\InvalidConfigException;
-use yii\db\Expression;
 use yii\web\MethodNotAllowedHttpException;
 
 /**
- * app devhosts Apid Action
+ * app devhosts Api Action
  *
  * PHP version 7
  *
@@ -32,11 +32,26 @@ use yii\web\MethodNotAllowedHttpException;
  */
 class ApiAction extends Action
 {
+    /**
+     * @var string class name of the model which will be handled by this action.
+     * The model class must implement [[ActiveRecordInterface]].
+     * This property must be set.
+     */
 	public $modelClass = 'yiiplus\appDevhosts\models\AppDevhosts';
 
+    /**
+     * @var string
+     */
+    public $tokenParamter = 'system.yp-app-devhosts-toekn';
+
+    /**
+     * @param token string 此接口需要授权码才能访问
+     *
+     * @return ActiveDataProvider
+     */
 	public function run($token)
 	{
-		if (!Yii::$app->request->getIsPost()) {
+		if (Yii::$app->request->getIsPost()) {
             throw new MethodNotAllowedHttpException();
         }
 
@@ -44,14 +59,20 @@ class ApiAction extends Action
             throw new InvalidConfigException("Model class doesn't exist");
         }
 
-        $modelClass = $this->modelClass;
-        
-        $query = $modelClass::find();
+        if (empty($token)) {
+            throw new InvalidParamException("The token parameter does not exist");
+        }
 
-        $dataProvider = new ActiveDataProvider([
+        $kvstore = Yii::$app->kvstore;
+        if ($token != $kvstore->get($this->tokenParamter)) {
+            throw new InvalidParamException("Token parameter does not match");
+        }
+
+        $modelClass = $this->modelClass;
+        $query = $modelClass::find();
+        $dataProvider = new \yii\data\ActiveDataProvider([
             'query' => $query,
         ]);
-
         $query->orderBy('sort');
 
         return $dataProvider;

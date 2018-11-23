@@ -18,8 +18,8 @@ class m181122_065003_yp_app_devhosts extends Migration
             'host' => $this->string(100)->notNull(),
             'type' => $this->tinyInteger(1)->defaultValue(0),
             'sort' => $this->integer()->defaultValue(0),
-            'created_at' => $this->datetime()->notNull(),
-            'updated_at' => $this->datetime(),
+            'created_at' => $this->integer(11),
+            'updated_at' => $this->integer(11),
         ]);
     }
 
