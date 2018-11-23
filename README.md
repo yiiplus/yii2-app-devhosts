@@ -31,6 +31,18 @@ php composer.phar require --prefer-dist yiiplus/yii2-app-devhosts "^1.0.0"
     ],
     ...
 ],
+
+'components' => [
+    ...
+    'i18n' => [
+        'translations' => [
+            '*' => [
+                'class' => 'yii\i18n\PhpMessageSource'
+            ],
+        ],
+    ],
+    ...
+]
 ```
 
 3.创建数据库
