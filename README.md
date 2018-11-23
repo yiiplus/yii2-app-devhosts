@@ -1,6 +1,6 @@
 yii2-app-devhosts
 ========================
-使用yii2封装的 app devhosts 扩展，提供了灵活可编辑的 app hosts 数据。
+使用yii2封装的 app devhosts 扩展，提供了灵活可编辑的 app hosts 数据。主要应用于app中环境的切换，比如从生产切换到测试，它能更加安全和敏捷的提供环境的host数据。
 
 1.安装
 ------------
