@@ -22,7 +22,7 @@ php composer.phar require --prefer-dist yiiplus/yii2-app-devhosts "^1.0.0"
 2.配置
 ------------
 
-## 配置后台对数据的增删改查模块
+> 配置后台对数据的增删改查模块
 ```php
 'modules' => [
     ...
@@ -41,8 +41,7 @@ php composer.phar require --prefer-dist yiiplus/yii2-app-devhosts "^1.0.0"
 
 4.使用
 ------------
-
-## 	定义app访问接口
+> 定义app访问接口
 ```php
 //Controller
 function actions(){
