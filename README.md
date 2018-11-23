@@ -26,7 +26,7 @@ php composer.phar require --prefer-dist yiiplus/yii2-app-devhosts "^1.0.0"
 ```php
 'modules' => [
     ...
-    'kvstore' => [
+    'app-devhosts' => [
         'class' => 'yiiplus\appDevhosts\Module',
     ],
     ...
@@ -44,13 +44,20 @@ php composer.phar require --prefer-dist yiiplus/yii2-app-devhosts "^1.0.0"
 > 定义app访问接口
 ```php
 //Controller
-function actions(){
-   return [
-        ...
-        'index' => [
-        	'class' => 'yiiplus\appDevhosts\actions\ApiActions'
-        ],
-        ...
-    ];
+Class AppDevhostsController extends Controller
+{
+    function actions(){
+       return [
+            ...
+            'index' => [
+            	'class' => 'yiiplus\appDevhosts\actions\ApiActions'
+            ],
+            ...
+        ];
+    }
 }
+
 ```
+
+- 如需操作数据，则访问后台页面：`xxx.com/app-devhosts`
+- app接口地址：`xxx.com/xxx/app-devhosts?token=xxx`
