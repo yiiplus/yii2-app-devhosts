@@ -46,16 +46,6 @@ class AppDevhosts extends \yii\db\ActiveRecord
        ];
     }
 
-    /** 
-     * hosts 的类型列表
-     */
-    public static $type_list = [
-        0 => Yii::t('yiiplus/app-devhosts', '正式'),
-        1 => Yii::t('yiiplus/app-devhosts', '预发布'),
-        2 => Yii::t('yiiplus/app-devhosts', '测试'),
-        3 => Yii::t('yiiplus/app-devhosts', '审核'),
-    ];
-
     /**
      * 声明 table name
      *
@@ -111,6 +101,21 @@ class AppDevhosts extends \yii\db\ActiveRecord
             'sort' => Yii::t('yiiplus/app-devhosts', '排序'),
             'created_at' => Yii::t('yiiplus/app-devhosts', '创建时间'),
             'updated_at' => Yii::t('yiiplus/app-devhosts', '更新时间'),
+        ];
+    }
+
+    /**
+     * 获取类型列表
+     *
+     * @return array 类型列表
+     */
+    public static function getTypeList()
+    {
+        return [
+            0 => Yii::t('yiiplus/app-devhosts', '正式'),
+            1 => Yii::t('yiiplus/app-devhosts', '预发布'),
+            2 => Yii::t('yiiplus/app-devhosts', '测试'),
+            3 => Yii::t('yiiplus/app-devhosts', '审核'),
         ];
     }
 }
