@@ -49,7 +49,12 @@ class AppDevhosts extends \yii\db\ActiveRecord
     /** 
      * hosts 的类型列表
      */
-    public static $type_list = [0 => '正式', 1 => '预发布', 2 => '测试', 3 => '审核'];
+    public static $type_list = [
+        0 => Yii::t('yiiplus/app-devhosts', '正式'),
+        1 => Yii::t('yiiplus/app-devhosts', '预发布'),
+        2 => Yii::t('yiiplus/app-devhosts', '测试'),
+        3 => Yii::t('yiiplus/app-devhosts', '审核'),
+    ];
 
     /**
      * 声明 table name
@@ -99,13 +104,13 @@ class AppDevhosts extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'name' => 'Name',
-            'host' => 'Host',
-            'type' => 'Type',
-            'sort' => 'Sort',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
+            'id' => Yii::t('yiiplus/app-devhosts', '主键ID'),
+            'name' => Yii::t('yiiplus/app-devhosts', '接口环境名称'),
+            'host' => Yii::t('yiiplus/app-devhosts', '基础请求接口'),
+            'type' => Yii::t('yiiplus/app-devhosts', '类型'),
+            'sort' => Yii::t('yiiplus/app-devhosts', '排序'),
+            'created_at' => Yii::t('yiiplus/app-devhosts', '创建时间'),
+            'updated_at' => Yii::t('yiiplus/app-devhosts', '更新时间'),
         ];
     }
 }

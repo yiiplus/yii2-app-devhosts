@@ -42,7 +42,7 @@ class ApiAction extends Action
     /**
      * @var string
      */
-    public $tokenParamter = 'system.yp-app-devhosts-toekn';
+    public $tokenParamter = 'app_devhosts_token';
 
     /**
      * @param token string 此接口需要授权码才能访问

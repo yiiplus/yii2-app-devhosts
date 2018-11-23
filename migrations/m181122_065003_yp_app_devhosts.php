@@ -12,6 +12,10 @@ class m181122_065003_yp_app_devhosts extends Migration
      */
     public function safeUp()
     {
+        $tableOptions = null;
+        if ($this->db->driverName === 'mysql') {
+            $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_general_ci ENGINE=InnoDB';
+        }
         $this->createTable('yp_app_devhosts', [
             'id' => $this->primaryKey(),
             'name' => $this->string(50)->notNull(),
@@ -20,7 +24,7 @@ class m181122_065003_yp_app_devhosts extends Migration
             'sort' => $this->integer()->defaultValue(0),
             'created_at' => $this->integer(11),
             'updated_at' => $this->integer(11),
-        ]);
+        ], $tableOptions);
     }
 
     /**
