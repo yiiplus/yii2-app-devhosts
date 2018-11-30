@@ -15,7 +15,6 @@ namespace yiiplus\appDevhosts\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\AppDevhosts;
 
 /**
  * AppDevhostsSearch represents the model behind the search form of `common\models\AppDevhosts`.
