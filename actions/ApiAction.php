@@ -64,7 +64,7 @@ class ApiAction extends Action
         }
 
         $kvstore = Yii::$app->kvstore;
-        if ($token != $kvstore->get($this->tokenParamter)) {
+        if (md5($token) != $kvstore->get($this->tokenParamter)) {
             throw new InvalidParamException("Token parameter does not match");
         }
 
