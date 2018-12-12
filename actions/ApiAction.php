@@ -37,7 +37,7 @@ class ApiAction extends Action
      * The model class must implement [[ActiveRecordInterface]].
      * This property must be set.
      */
-	public $modelClass = 'yiiplus\appDevhosts\models\AppDevhosts';
+    public $modelClass = 'yiiplus\appDevhosts\models\AppDevhosts';
 
     /**
      * @var string
@@ -49,9 +49,11 @@ class ApiAction extends Action
      *
      * @return ActiveDataProvider
      */
-	public function run($token)
-	{
-		if (Yii::$app->request->getIsPost()) {
+    public function run()
+    {
+        $request = Yii::$app->request;
+
+        if ($request->getIsPost()) {
             throw new MethodNotAllowedHttpException();
         }
 
@@ -59,6 +61,7 @@ class ApiAction extends Action
             throw new InvalidConfigException("Model class doesn't exist");
         }
 
+        $token = $request->get('token');
         if (empty($token)) {
             throw new InvalidParamException("The token parameter does not exist");
         }
@@ -76,5 +79,5 @@ class ApiAction extends Action
         $query->orderBy('sort');
 
         return $dataProvider;
-	}
+    }
 }
