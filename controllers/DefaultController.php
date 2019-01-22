@@ -140,6 +140,6 @@ class DefaultController extends Controller
             return $model;
         }
 
-        throw new NotFoundHttpException('The requested page does not exist.');
+        throw new NotFoundHttpException(Yii::t('yiiplus/kvstore','请求的页面不存在!'));
     }
 }

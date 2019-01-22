@@ -58,17 +58,17 @@ class ApiAction extends Action
         }
 
         if (empty($this->modelClass) || !class_exists($this->modelClass)) {
-            throw new InvalidConfigException("Model class doesn't exist");
+            throw new InvalidConfigException(Yii::t('yiiplus/kvstore', "模型类不存在!"));
         }
 
         $token = $request->get('token');
         if (empty($token)) {
-            throw new InvalidParamException("The token parameter does not exist");
+            throw new InvalidParamException(Yii::t('yiiplus/kvstore', "令牌参数不存在!"));
         }
 
         $kvstore = Yii::$app->kvstore;
         if ($token != md5($kvstore->get($this->tokenParamter))) {
-            throw new InvalidParamException("Token parameter does not match");
+            throw new InvalidParamException(Yii::t('yiiplus/kvstore', "令牌参数不匹配!"));
         }
 
         $modelClass = $this->modelClass;
