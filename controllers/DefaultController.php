@@ -1,15 +1,14 @@
 <?php
 /**
- * app devhosts
- *
- * PHP version 7
+ * yiiplus/yii2-app-devhosts
  *
  * @category  PHP
  * @package   Yii2
- * @author    gengxiankun@126.com
- * @copyright 2006-2018 YiiPlus Ltd
+ * @copyright 2018-2019 YiiPlus Ltd
+ * @license   https://github.com/yiiplus/yii2-app-devhosts/licence.txt Apache 2.0
  * @link      http://www.yiiplus.com
  */
+
 namespace yiiplus\appDevhosts\controllers;
 
 use Yii;
